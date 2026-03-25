@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Mamaluni Premium Theme - Dark Elegant with Warm Accents */
+    --background: 0 0% 5%; /* Deep black */
+    --foreground: 40 20% 92%; /* Warm cream */
+
+    --card: 0 0% 8%; /* Slightly lighter black */
+    --card-foreground: 40 20% 92%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 10 60% 45%; /* Terracotta/Wine red */
+    --primary-foreground: 40 20% 98%;
+
+    --secondary: 40 25% 88%; /* Warm beige */
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 15%; /* Dark gray */
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 38 50% 50%; /* Warm gold */
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 10 60% 45%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Premium hover effects */
+  .hover-lift {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+  }
+
+  /* Smooth image zoom */
+  .img-zoom {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .img-zoom:hover {
+    @apply scale-105;
+  }
+
+  /* Editorial text styling */
+  .text-editorial {
+    letter-spacing: -0.02em;
+  }
+
+  /* Gold shimmer effect */
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(38, 50%, 50%) 0%,
+      hsl(45, 60%, 60%) 50%,
+      hsl(38, 50%, 50%) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Overlay for images */
+  .overlay-dark {
+    @apply relative;
+  }
+
+  .overlay-dark::after {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20;
+  }
+}
